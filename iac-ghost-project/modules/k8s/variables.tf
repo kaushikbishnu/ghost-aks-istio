@@ -46,10 +46,6 @@ variable "dns_prefix" {
     default = "k8sghost"
 }
 
-variable cluster_name {
-    default = "k8sghost"
-}
-
 variable log_analytics_workspace_name {
     default = "ghostLogAnalyticsWorkspaceName"
 }

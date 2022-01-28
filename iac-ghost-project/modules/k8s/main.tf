@@ -24,7 +24,7 @@ resource "azurerm_log_analytics_solution" "test" {
 }
 
 resource "azurerm_kubernetes_cluster" "k8s" {
-    name                = var.cluster_name
+    name                = "${var.ghost_project_vars.app_name}-k8s-cluster"
     location            = var.k8s_resource_group.location
     resource_group_name = var.k8s_resource_group.name
     dns_prefix          = var.dns_prefix

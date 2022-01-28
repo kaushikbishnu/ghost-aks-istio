@@ -32,3 +32,21 @@ module "k8s_cluster" {
       location = var.location      
     }
 }
+
+module "mysql_db" {
+  source = "./modules/mysql"
+
+  # (Azure-specific configuration arguments)
+  db_resource_group = azurerm_resource_group.rg-ghost
+  db_virtual_network = azurerm_virtual_network.vn-ghost
+  ghost_project_vars = {
+      app_name     =  var.app_name
+      subscription_id =  var.subscription_id
+      client_id = var.client_id
+      client_secret = var.client_secret
+      tenant_id = var.tenant_id
+      ssh_user = var.ssh_user
+      ssh_public_key = var.ssh_public_key
+      location = var.location      
+    }
+}
