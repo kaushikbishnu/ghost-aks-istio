@@ -5,4 +5,4 @@ ssh_user="bishnuk"
 
 agent_min_count = 1
 agent_max_count = 3
-max_pods_per_agent = 10
+max_pods = 30

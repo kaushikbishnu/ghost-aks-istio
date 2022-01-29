@@ -34,7 +34,7 @@ variable "agent_max_count" {
   default = 3
 }
 
-variable "max_pods_per_agent" {
+variable "max_pods" {
   default = 5
 }
 

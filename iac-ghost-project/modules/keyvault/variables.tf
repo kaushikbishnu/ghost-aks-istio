@@ -11,27 +11,17 @@ variable ghost_project_vars {
   })
 }
 
-variable db_resource_group {
+variable kv_resource_group {
     type = object({
     name     =  string
     location =  string
   })
 }
 
-variable db_virtual_network {
+variable kv_virtual_network {
     type = object({
     name     =  string
     location =  string
     address_space = list(string)
   })
-}
-
-variable "db_user" {
-  type = string
-  default = "test"
-}
-
-variable "db_password" {
-  type = string
-  default = "test@!123"
 }
