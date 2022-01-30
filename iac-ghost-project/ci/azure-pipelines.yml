@@ -26,9 +26,9 @@ steps:
 #     scriptLocation: 'scriptPath'
 #     scriptPath:
 
-
-- script: 'cp -r /E/Softwares/terraform_1.1.4_windows_386/ghost-nordcloud/iac-ghost-project/.terraform $(System.DefaultWorkingDirectory)/iac-ghost-project/.terraform'
-  displayName: 'copy terraform init directory'
+- task: CmdLine@2
+  inputs:
+    script: 'cp -r /E/Softwares/terraform_1.1.4_windows_386/ghost-nordcloud/iac-ghost-project/.terraform $(System.DefaultWorkingDirectory)/iac-ghost-project/.terraform'
 
 - task: TerraformCLI@0
   inputs:
