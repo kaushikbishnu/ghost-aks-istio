@@ -26,9 +26,6 @@ steps:
 #     scriptLocation: 'scriptPath'
 #     scriptPath:
 
-- task: CmdLine@2
-  inputs:
-    script: ''
     
 - task: CmdLine@2
   inputs:
@@ -39,7 +36,10 @@ steps:
 
 - task: CmdLine@2
   inputs:
+    script: 'terraform login'
+
+- task: CmdLine@2
+  inputs:
     script: |
       cd $(System.DefaultWorkingDirectory)\iac-ghost-project\
-      e:
       terraform plan
