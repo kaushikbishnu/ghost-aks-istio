@@ -15,11 +15,12 @@ steps:
   displayName: setup kubectl
   inputs:
     azureSubscription: 'Azure subscription 1(1bd78ea7-13c0-4d71-bc70-b6a822ea4a46)'
+    scriptType: 'ps'
     scriptLocation: 'inlineScript'
     inlineScript: |
       az account set --subscription 1bd78ea7-13c0-4d71-bc70-b6a822ea4a46
       az aks get-credentials --resource-group rg-nordcloud-ghost --name ghost-k8s-cluster
-
+      
 - task: CmdLine@2
   displayName: Download ISTIO
   inputs:
