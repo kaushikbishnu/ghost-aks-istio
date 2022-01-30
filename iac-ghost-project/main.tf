@@ -14,7 +14,6 @@ resource "azurerm_virtual_network" "vn-ghost" {
   depends_on = [azurerm_resource_group.rg-ghost]
 }
 
-
 module "keyvault" {
   source = "./modules/keyvault"
 
