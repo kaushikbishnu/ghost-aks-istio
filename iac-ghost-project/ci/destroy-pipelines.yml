@@ -24,10 +24,4 @@ steps:
   inputs:
     script: |
       cd $(System.DefaultWorkingDirectory)\iac-ghost-project\
-      terraform plan
-- task: CmdLine@2
-  displayName: Terraform Apply
-  inputs:
-    script: |
-      cd $(System.DefaultWorkingDirectory)\iac-ghost-project\
-      terraform apply -auto-approve
+      terraform apply --destroy -auto-approve

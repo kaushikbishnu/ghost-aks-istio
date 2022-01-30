@@ -1,0 +1,34 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+pool: 
+  name: Kaushik_Laptop # Name of a pool. 
+  vmImage: DESKTOP-A9DASJR
+
+steps:
+- task: CmdLine@2
+  displayName: copy terraform directory to Working Directory
+  inputs:
+    script: |
+      mkdir $(System.DefaultWorkingDirectory)\iac-ghost-project\.terraform
+      
+      xcopy /E /D E:\Softwares\iac-ghost-project\.terraform  $(System.DefaultWorkingDirectory)\iac-ghost-project\.terraform
+
+- task: CmdLine@2
+  displayName: Terraform Plan
+  inputs:
+    script: |
+      cd $(System.DefaultWorkingDirectory)\iac-ghost-project\
+      terraform plan
+      
+- task: CmdLine@2
+  displayName: Terraform Apply
+  inputs:
+    script: |
+      cd $(System.DefaultWorkingDirectory)\iac-ghost-project\
+      terraform apply -auto-approve
