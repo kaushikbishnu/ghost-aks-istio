@@ -34,9 +34,9 @@ steps:
       
       xcopy /E /D E:\Softwares\iac-ghost-project\.terraform  $(System.DefaultWorkingDirectory)\iac-ghost-project\.terraform
 
-- task: CmdLine@2
-  inputs:
-    script: 'terraform login'
+# - task: CmdLine@2
+#   inputs:
+#     script: 'terraform login'
 
 - task: CmdLine@2
   inputs:
