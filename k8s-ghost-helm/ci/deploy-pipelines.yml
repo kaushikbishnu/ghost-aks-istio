@@ -18,6 +18,21 @@ steps:
       helm repo add istio https://istio-release.storage.googleapis.com/charts
       helm repo update
 
+- task: AzureKeyVault@2
+  inputs:
+    azureSubscription: 'Azure subscription 1(1bd78ea7-13c0-4d71-bc70-b6a822ea4a46)'
+    KeyVaultName: 'ghost-kv'
+    SecretsFilter: '*'
+    RunAsPreJob: false
+
+- task: CmdLine@2
+  displayName: az login
+  inputs:
+    script: |
+      az login -u 93031176-d2d8-4035-b9ef-00b5a4febee6 -p $(sp-password)
+      az account set --subscription 1bd78ea7-13c0-4d71-bc70-b6a822ea4a46
+      az aks get-credentials --resource-group rg-nordcloud-ghost --name ghost-k8s-cluster
+
 - task: CmdLine@2
   displayName: install istio system
   inputs:
