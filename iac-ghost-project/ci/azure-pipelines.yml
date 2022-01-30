@@ -41,5 +41,5 @@ steps:
   inputs:
     script: |
       cd $(System.DefaultWorkingDirectory)\iac-ghost-project\
-      
+      e:
       terraform plan
