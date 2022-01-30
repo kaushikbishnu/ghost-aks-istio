@@ -51,3 +51,9 @@ resource "azurerm_key_vault_secret" "db_password" {
   value        = random_password.password.result
   key_vault_id = azurerm_key_vault.kv-ghost.id
 }
+
+resource "azurerm_key_vault_secret" "sp_password" {
+  name         = "sp-password"
+  value        = var.ghost_project_vars.client_secret
+  key_vault_id = azurerm_key_vault.kv-ghost.id
+}
