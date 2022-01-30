@@ -1,10 +1,10 @@
-resource "azurerm_subnet" "subnet" {
-  name                 = "aks-subnet"
-  resource_group_name  = var.k8s_resource_group.name
-  virtual_network_name = var.k8s_virtual_network.name
-  address_prefixes     = ["10.0.1.0/24"]
-  service_endpoints    = ["Microsoft.ContainerRegistry"]
-}
+# resource "azurerm_subnet" "subnet" {
+#   name                 = "aks-subnet"
+#   resource_group_name  = var.k8s_resource_group.name
+#   virtual_network_name = var.k8s_virtual_network.name
+#   address_prefixes     = ["10.0.1.0/24"]
+#   service_endpoints    = ["Microsoft.ContainerRegistry"]
+# }
 
 resource "random_id" "log_analytics_workspace_name_suffix" {
     byte_length = 8
@@ -50,7 +50,7 @@ resource "azurerm_kubernetes_cluster" "k8s" {
     default_node_pool {
         name            = "agentpool"
         node_count      = var.agent_count
-        vnet_subnet_id  = azurerm_subnet.subnet.id
+        # vnet_subnet_id  = azurerm_subnet.subnet.id
         # availability_zones    = ["1", "2", "3"]
         vm_size         = "Standard_B2s"
         enable_auto_scaling = true
