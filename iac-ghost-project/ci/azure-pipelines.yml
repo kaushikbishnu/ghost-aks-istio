@@ -25,13 +25,9 @@ steps:
 #     scriptType: 'bash'
 #     scriptLocation: 'scriptPath'
 #     scriptPath: 
-- task: Bash@3
-  inputs:
-    filePath: '$(System.DefaultWorkingDirectory)/k8s-ghost-helm/az.kubectl.sh'
 
 - task: TerraformCLI@0
   inputs:
     command: 'plan'
-    environmentServiceName: 'Azure subscription 1(1bd78ea7-13c0-4d71-bc70-b6a822ea4a46)'
     runAzLogin: true
     allowTelemetryCollection: true
