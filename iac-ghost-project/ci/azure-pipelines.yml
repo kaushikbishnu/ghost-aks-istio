@@ -6,8 +6,10 @@
 trigger:
 - main
 
-pool:
-  vmImage: ubuntu-latest
+
+pool: 
+  name: Kaushik_Laptop # Name of a pool. 
+  vmImage: DESKTOP-A9DASJR
 
 steps:
 - script: echo Hello, world!
