@@ -37,9 +37,8 @@ steps:
       
       xcopy /E /D E:\Softwares\iac-ghost-project\.terraform  $(System.DefaultWorkingDirectory)\iac-ghost-project\.terraform
 
-- task: TerraformCLI@0
+- task: CmdLine@2
   inputs:
-    command: 'plan'
-    runAzLogin: true
-    workingDirectory: '$(System.DefaultWorkingDirectory)/iac-ghost-project'
-    allowTelemetryCollection: true
+    script: |
+    cd $(System.DefaultWorkingDirectory)\iac-ghost-project    
+    terraform plan
