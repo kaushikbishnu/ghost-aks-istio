@@ -29,13 +29,6 @@ steps:
 
 - task: TerraformCLI@0
   inputs:
-    command: 'init'
-    runAzLogin: true
-    workingDirectory: '$(System.DefaultWorkingDirectory)/iac-ghost-project'
-    allowTelemetryCollection: true
-
-- task: TerraformCLI@0
-  inputs:
     command: 'plan'
     runAzLogin: true
     workingDirectory: '$(System.DefaultWorkingDirectory)/iac-ghost-project'
