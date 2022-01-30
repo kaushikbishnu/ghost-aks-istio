@@ -1,0 +1,32 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+pool: 
+  name: Kaushik_Laptop # Name of a pool. 
+  vmImage: DESKTOP-A9DASJR
+
+helm uninstall istio-base -n istio-system
+helm uninstall istiod -n istio-system #--wait
+helm uninstall istio-ingress -n istio-ingress
+kubectl delete namespace istio-ingress
+kubectl delete namespace istio-ingress
+kubectl delete namespace istio-system
+helm uninstall ghost-nordcloud
+
+steps:
+- task: CmdLine@2
+  displayName: uninstall
+  inputs:
+    script: |
+      helm uninstall istio-base -n istio-system
+      helm uninstall istiod -n istio-system #--wait
+      helm uninstall istio-ingress -n istio-ingress
+      kubectl delete namespace istio-ingress
+      kubectl delete namespace istio-ingress
+      kubectl delete namespace istio-system
+      helm uninstall ghost-nordcloud
