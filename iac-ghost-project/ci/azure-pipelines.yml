@@ -11,35 +11,23 @@ pool:
   vmImage: DESKTOP-A9DASJR
 
 steps:
-- script: echo Deploying the infrustructure for hosting ghost project!
-  displayName: 'Run a one-line script'
-
-# - script: |
-#     echo Add other tasks to build, test, and deploy your project.
-#     echo See https://aka.ms/yaml
-#   displayName: 'Run a multi-line script'
-
-# - task: AzureCLI@2
-#   inputs:
-#     azureSubscription: 'Azure subscription 1(1bd78ea7-13c0-4d71-bc70-b6a822ea4a46)'
-#     scriptType: 'bash'
-#     scriptLocation: 'scriptPath'
-#     scriptPath:
-
-    
 - task: CmdLine@2
+  displayName: copy terraform directory to Working Directory
   inputs:
     script: |
       mkdir $(System.DefaultWorkingDirectory)\iac-ghost-project\.terraform
       
       xcopy /E /D E:\Softwares\iac-ghost-project\.terraform  $(System.DefaultWorkingDirectory)\iac-ghost-project\.terraform
 
-# - task: CmdLine@2
-#   inputs:
-#     script: 'terraform login'
-
 - task: CmdLine@2
+  displayName: Terraform Plan
   inputs:
     script: |
       cd $(System.DefaultWorkingDirectory)\iac-ghost-project\
       terraform plan
+- task: CmdLine@2
+  displayName: Terraform Apply
+  inputs:
+    script: |
+      cd $(System.DefaultWorkingDirectory)\iac-ghost-project\
+      terraform apply
