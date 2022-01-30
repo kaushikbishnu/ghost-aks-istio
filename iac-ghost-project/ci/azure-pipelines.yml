@@ -24,7 +24,15 @@ steps:
 #     azureSubscription: 'Azure subscription 1(1bd78ea7-13c0-4d71-bc70-b6a822ea4a46)'
 #     scriptType: 'bash'
 #     scriptLocation: 'scriptPath'
-#     scriptPath: 
+#     scriptPath:
+
+
+- task: TerraformCLI@0
+  inputs:
+    command: 'init'
+    runAzLogin: true
+    workingDirectory: '$(System.DefaultWorkingDirectory)/iac-ghost-project'
+    allowTelemetryCollection: true
 
 - task: TerraformCLI@0
   inputs:
