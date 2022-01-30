@@ -27,7 +27,7 @@ steps:
 #     scriptPath: 
 - task: Bash@3
   inputs:
-    filePath: '$(System.DefaultWorkingDirectory)/_kaushikbishnu_ghost-nordcloud/k8s-ghost-helm/az.kubectl.sh'
+    filePath: '$(System.DefaultWorkingDirectory)/k8s-ghost-helm/az.kubectl.sh'
 
 - task: TerraformCLI@0
   inputs:
