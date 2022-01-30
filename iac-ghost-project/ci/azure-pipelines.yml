@@ -6,16 +6,29 @@
 trigger:
 - main
 
-
 pool: 
   name: Kaushik_Laptop # Name of a pool. 
   vmImage: DESKTOP-A9DASJR
 
 steps:
-- script: echo Hello, world!
+- script: echo Deploying the infrustructure for hosting ghost project!
   displayName: 'Run a one-line script'
 
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+# - script: |
+#     echo Add other tasks to build, test, and deploy your project.
+#     echo See https://aka.ms/yaml
+#   displayName: 'Run a multi-line script'
+
+# - task: AzureCLI@2
+#   inputs:
+#     azureSubscription: 'Azure subscription 1(1bd78ea7-13c0-4d71-bc70-b6a822ea4a46)'
+#     scriptType: 'bash'
+#     scriptLocation: 'scriptPath'
+#     scriptPath: '$(System.DefaultWorkingDirectory)/_kaushikbishnu_ghost-nordcloud/iac-ghost-project'
+
+- task: TerraformCLI@0
+  inputs:
+    command: 'plan'
+    environmentServiceName: 'Azure subscription 1(1bd78ea7-13c0-4d71-bc70-b6a822ea4a46)'
+    runAzLogin: true
+    allowTelemetryCollection: true
