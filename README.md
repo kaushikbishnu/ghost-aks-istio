@@ -1,3 +1,9 @@
+# Presentation
+
+Click this link for presentation https://kaushikbishnu.github.io/ghost-nordcloud/
+
+# Development
+
 ### This POC is using Terraform Cloud 
 >I am using  for running terrafomrm scripts.
 Terraform Cloud does not supprt -var-file argument.
