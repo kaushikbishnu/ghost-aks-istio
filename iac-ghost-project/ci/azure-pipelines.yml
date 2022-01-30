@@ -30,4 +30,5 @@ steps:
   inputs:
     command: 'plan'
     runAzLogin: true
+    workingDirectory: '$(System.DefaultWorkingDirectory)/iac-ghost-project'
     allowTelemetryCollection: true
