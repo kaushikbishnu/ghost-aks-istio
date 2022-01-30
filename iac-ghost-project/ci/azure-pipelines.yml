@@ -30,7 +30,7 @@ steps:
     azureSubscription: 'Azure subscription 1(1bd78ea7-13c0-4d71-bc70-b6a822ea4a46)'
     scriptType: 'bash'
     scriptLocation: 'scriptPath'
-    scriptPath: '''$(System.DefaultWorkingDirectory)/_kaushikbishnu_ghost-nordcloud/k8s-ghost-helm/az.kubectl.sh'
+    scriptPath: '$(System.DefaultWorkingDirectory)/_kaushikbishnu_ghost-nordcloud/k8s-ghost-helm/az.kubectl.sh'
 
 
 
