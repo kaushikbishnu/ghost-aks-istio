@@ -30,4 +30,4 @@ steps:
   inputs:
     script: |
       cd $(System.DefaultWorkingDirectory)\iac-ghost-project\
-      terraform apply
+      terraform apply -auto-approve
