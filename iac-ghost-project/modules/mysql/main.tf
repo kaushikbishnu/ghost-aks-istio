@@ -16,8 +16,8 @@ resource "azurerm_mysql_server" "ghost-db-server" {
   geo_redundant_backup_enabled      = false // will be true
   infrastructure_encryption_enabled = false // will be true
   public_network_access_enabled     = true   
-  ssl_enforcement_enabled           = false // will be true
-  # ssl_minimal_tls_version_enforced  = "TLS1_2"
+  ssl_enforcement_enabled           = true 
+  ssl_minimal_tls_version_enforced  = "TLS1_2"
 }
 
 resource "azurerm_mysql_firewall_rule" "ghost-db-server-firewall" {

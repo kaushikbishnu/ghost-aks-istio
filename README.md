@@ -14,22 +14,19 @@ Hence I kept only one tfvars file. Ideally I will create a directory structure f
 ### Folder structure options and naming conventions for this project
 
     
-    ├── [.ssh]                          # ssh keystore 
-    ├── [modules]                       # terraform modules for IAC 
-        ├── [k8s]
-            ├── main.tf
-            ├── output.tf
-            ├── variables.tf
-        ├── [keyvault]
-            ├── ...    
-        ├── [mysql]
-            ├── ...
-        ├── [storage_account]
-            ├── ...                
-    ├── [scripts]                       # startup script for Terraform Cloud
-    ├── [terraform.d]                   # terraform cloud generated files
-    ├── backend.tf                      
-    ├── dev.auto.tfvars                 # tfvars file for terrafomr cloud
-    ├── main.tf
-    ├── providers.tf
-    ├── variables.tf
+    ├── [docs]
+    ├── [iac-ghost-project]                 # Terraform Deplyment in Azure Devops
+        ├── [.ssh]                          # ssh keystore 
+        ├── [ci]                            # Azure Devopos CI pipeline
+        ├── [modules]                       # terraform modules for IAC k8s/mysql/keyvault            
+        ├── [scripts]                       # startup script for Terraform Cloud
+        ├── [terraform.d]                   # terraform cloud generated files
+        ├── backend.tf                      
+        ├── dev.auto.tfvars                 # tfvars file for terrafomr cloud
+        ├── main.tf
+        ├── providers.tf
+        ├── variables.tf
+    ├── [k8s-ghost-helm]                    # Helm Charts for ghost     
+        ├── [ci]
+        ├── [ghost-nordcloud]
+        ├── 
