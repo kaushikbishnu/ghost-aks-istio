@@ -11,42 +11,32 @@ pool:
   vmImage: DESKTOP-A9DASJR
 
 steps:    
-- task: AzureCLI@2
-  displayName: setup kubectl
-  inputs:
-    azureSubscription: 'Azure subscription 1(1bd78ea7-13c0-4d71-bc70-b6a822ea4a46)'
-    scriptType: 'batch'
-    scriptLocation: 'inlineScript'
-    inlineScript: |
-      az account set --subscription 1bd78ea7-13c0-4d71-bc70-b6a822ea4a46
-      az aks get-credentials --resource-group rg-nordcloud-ghost --name ghost-k8s-cluster
-      
 - task: CmdLine@2
-  displayName: Download ISTIO
+  displayName: az login
   inputs:
     script: |
-      helm repo add istio https://istio-release.storage.googleapis.com/charts
-      helm repo update
+      "%ProgramFiles%\Git\bin\bash.exe" $(System.DefaultWorkingDirectory)\k8s-ghost-helm\scripts\az.kubectl.sh
 
 - task: CmdLine@2
-  displayName: install istio system
+  displayName: Helm Install Istio
   inputs:
     script: |
-      kubectl create namespace istio-system
-      helm install istio-base istio/base -n istio-system
-      helm upgrade --install istiod istio/istiod -n istio-system #--wait
+      "%ProgramFiles%\Git\bin\bash.exe" $(System.DefaultWorkingDirectory)\k8s-ghost-helm\scripts\istio.sh
 
 - task: CmdLine@2
-  displayName: install istio ingress
+  displayName: Helm Install kiali
   inputs:
     script: |
-      kubectl create namespace istio-ingress
-      kubectl label namespace istio-ingress istio-injection=enabled
-      helm upgrade --install istio-ingress istio/gateway -n istio-ingress
+      "%ProgramFiles%\Git\bin\bash.exe" $(System.DefaultWorkingDirectory)\k8s-ghost-helm\scripts\kiali.sh
 
 - task: CmdLine@2
-  displayName: install ghost
+  displayName: Helm Install prometheus
   inputs:
     script: |
-      kubectl label namespace default istio-injection=enabled
-      helm upgrade --install ghost-nordcloud ./ghost-nordcloud/
+      "%ProgramFiles%\Git\bin\bash.exe" $(System.DefaultWorkingDirectory)\k8s-ghost-helm\scripts\prometheus.sh
+
+- task: CmdLine@2
+  displayName: Helm Install ghost
+  inputs:
+    script: |
+      "%ProgramFiles%\Git\bin\bash.exe" $(System.DefaultWorkingDirectory)\k8s-ghost-helm\scripts\ghost.sh
