@@ -11,6 +11,10 @@ pool:
   vmImage: DESKTOP-A9DASJR
 
 steps:    
+
+- task: Bash@3
+  inputs:
+    filePath: '$(System.DefaultWorkingDirectory)/k8s-ghost-helm/install.sh'
 - task: AzureCLI@2
   displayName: setup kubectl
   inputs:
