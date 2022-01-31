@@ -11,14 +11,12 @@ pool:
   vmImage: DESKTOP-A9DASJR
 
 steps:    
-- task: CmdLine@2
-  inputs:
-    script: '"%ProgramFiles%\Git\bin\bash.exe" $(System.DefaultWorkingDirectory)\k8s-ghost-helm\scripts\az.kubectl.sh'
+
 - task: CmdLine@2
   displayName: az login
   inputs:
     script: |
-      "%ProgramFiles%\Git\bin\bash.exe" $(System.DefaultWorkingDirectory)\k8s-ghost-helm\scripts\az.kubectl.sh
+      $(System.DefaultWorkingDirectory)\k8s-ghost-helm\scripts\az.kubectl.sh
 
 - task: CmdLine@2
   displayName: Helm Install Istio
