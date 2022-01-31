@@ -12,8 +12,13 @@ pool:
 
 steps:    
 - task: CmdLine@2
-  displayName: Terraform Plan
+  displayName: az login
   inputs:
     script: |
-      cd $(System.DefaultWorkingDirectory)\k8s-ghost-helm\
-      sh install.sh
+      "%ProgramFiles%\Git\bin\bash.exe" $(System.DefaultWorkingDirectory)\k8s-ghost-helm\az.kubectl.sh
+
+- task: CmdLine@2
+  displayName: Helm Install 
+  inputs:
+    script: |
+      "%ProgramFiles%\Git\bin\bash.exe" $(System.DefaultWorkingDirectory)\k8s-ghost-helm\install.sh
