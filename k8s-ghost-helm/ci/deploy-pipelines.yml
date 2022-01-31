@@ -7,8 +7,8 @@ trigger:
 - main
 
 pool: 
-  name: Kaushik_Laptop # Name of a pool. 
-  vmImage: DESKTOP-A9DASJR
+  name: Azure Pipelines # Name of a pool. 
+  vmImage: Hosted Agent
 
 steps:    
 - task: AzureCLI@2
