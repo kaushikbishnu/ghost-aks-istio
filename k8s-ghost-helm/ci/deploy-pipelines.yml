@@ -11,46 +11,9 @@ pool:
   vmImage: DESKTOP-A9DASJR
 
 steps:    
-
-- task: Bash@3
-  inputs:
-    filePath: '$(System.DefaultWorkingDirectory)/k8s-ghost-helm/install.sh'
-- task: AzureCLI@2
-  displayName: setup kubectl
-  inputs:
-    azureSubscription: 'Azure subscription 1(1bd78ea7-13c0-4d71-bc70-b6a822ea4a46)'
-    scriptType: 'bash'
-    scriptLocation: 'inlineScript'
-    inlineScript: |
-      az account set --subscription 1bd78ea7-13c0-4d71-bc70-b6a822ea4a46
-      az aks get-credentials --resource-group rg-nordcloud-ghost --name ghost-k8s-cluster
-      
 - task: CmdLine@2
-  displayName: Download ISTIO
+  displayName: Terraform Plan
   inputs:
     script: |
-      helm repo add istio https://istio-release.storage.googleapis.com/charts
-      helm repo update
-
-- task: CmdLine@2
-  displayName: install istio system
-  inputs:
-    script: |
-      kubectl create namespace istio-system
-      helm install istio-base istio/base -n istio-system
-      helm upgrade --install istiod istio/istiod -n istio-system #--wait
-
-- task: CmdLine@2
-  displayName: install istio ingress
-  inputs:
-    script: |
-      kubectl create namespace istio-ingress
-      kubectl label namespace istio-ingress istio-injection=enabled
-      helm upgrade --install istio-ingress istio/gateway -n istio-ingress
-
-- task: CmdLine@2
-  displayName: install ghost
-  inputs:
-    script: |
-      kubectl label namespace default istio-injection=enabled
-      helm upgrade --install ghost-nordcloud ./ghost-nordcloud/
+      cd $(System.DefaultWorkingDirectory)\k8s-ghost-helm\
+      sh install.sh
