@@ -22,22 +22,22 @@ steps:
   displayName: Helm Install Istio
   inputs:
     script: |
-      "%ProgramFiles%\Git\bin\bash.exe" $(System.DefaultWorkingDirectory)\k8s-ghost-helm\scripts\istio.sh
+      $(System.DefaultWorkingDirectory)\k8s-ghost-helm\scripts\istio.sh
 
 - task: CmdLine@2
   displayName: Helm Install kiali
   inputs:
     script: |
-      "%ProgramFiles%\Git\bin\bash.exe" $(System.DefaultWorkingDirectory)\k8s-ghost-helm\scripts\kiali.sh
+      $(System.DefaultWorkingDirectory)\k8s-ghost-helm\scripts\kiali.sh
 
 - task: CmdLine@2
   displayName: Helm Install prometheus
   inputs:
     script: |
-      "%ProgramFiles%\Git\bin\bash.exe" $(System.DefaultWorkingDirectory)\k8s-ghost-helm\scripts\prometheus.sh
+      $(System.DefaultWorkingDirectory)\k8s-ghost-helm\scripts\prometheus.sh
 
 - task: CmdLine@2
   displayName: Helm Install ghost
   inputs:
     script: |
-      "%ProgramFiles%\Git\bin\bash.exe" $(System.DefaultWorkingDirectory)\k8s-ghost-helm\scripts\ghost.sh
+      $(System.DefaultWorkingDirectory)\k8s-ghost-helm\scripts\ghost.sh
