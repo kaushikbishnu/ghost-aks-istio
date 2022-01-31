@@ -15,7 +15,7 @@ steps:
   displayName: setup kubectl
   inputs:
     azureSubscription: 'Azure subscription 1(1bd78ea7-13c0-4d71-bc70-b6a822ea4a46)'
-    scriptType: 'bash'
+    scriptType: 'batch'
     scriptLocation: 'inlineScript'
     inlineScript: |
       az account set --subscription 1bd78ea7-13c0-4d71-bc70-b6a822ea4a46

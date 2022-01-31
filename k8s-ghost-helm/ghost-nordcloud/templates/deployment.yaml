@@ -28,40 +28,40 @@ spec:
         - name: url
           value: {{ .Values.service.url }}
 
-        # - name: database__client
-        #   value: {{ .Values.database.client }}
+        - name: database__client
+          value: {{ .Values.database.client }}
 
-        # - name: database__connection__host
-        #   value: {{ .Values.database.connection.host }}
+        - name: database__connection__host
+          value: {{ .Values.database.connection.host }}
 
-        # - name: database__connection__user
-        #   value: {{ .Values.database.connection.user | quote }}
+        - name: database__connection__user
+          value: {{ .Values.database.connection.user | quote }}
 
-        # - name: database__connection__password
-        #   value: {{ .Values.database.connection.password | quote }}
+        - name: database__connection__password
+          value: {{ .Values.database.connection.password | quote }}
 
-        # - name: database__connection__database
-        #   value: {{ .Values.database.connection.database }}
+        - name: database__connection__database
+          value: {{ .Values.database.connection.database }}
 
-        # - name: database__connection__ssl__ca
-        #   value: {{ .Values.database.connection.ssl.ca | quote }}
+        - name: database__connection__ssl__ca
+          value: {{ .Values.database.connection.ssl.ca | quote }}
 
-        # - name: database__connection__port
-        #   value: {{ .Values.database.connection.port | quote }}
+        - name: database__connection__port
+          value: {{ .Values.database.connection.port | quote }}
 
-        # - name: database__connection__ssl__rejectUnauthorized
-        #   value: {{ .Values.database.connection.ssl.rejectUnauthorized | quote }}
+        - name: database__connection__ssl__rejectUnauthorized
+          value: {{ .Values.database.connection.ssl.rejectUnauthorized | quote }}
 
-        # - name: NODE_EXTRA_CA_CERTS
-        #   value: "/etc/ssl-cert"
+        - name: NODE_EXTRA_CA_CERTS
+          value: "/etc/ssl-cert"
 
-        volumeMounts:
-        - mountPath: /var/lib/ghost/content
-          name: content
-      volumes:
-      - name: content
-        persistentVolumeClaim:
-          claimName: blog-content
+      #   volumeMounts:
+      #   - mountPath: /var/lib/ghost/content
+      #     name: content
+      # volumes:
+      # - name: content
+      #   persistentVolumeClaim:
+      #     claimName: blog-content
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
