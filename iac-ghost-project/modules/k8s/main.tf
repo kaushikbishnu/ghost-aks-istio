@@ -49,7 +49,7 @@ resource "azurerm_kubernetes_cluster" "k8s" {
 
     default_node_pool {
         name            = "agentpool"
-        node_count      = var.agent_count
+        # node_count      = var.agent_count
         # vnet_subnet_id  = azurerm_subnet.subnet.id
         # availability_zones    = ["1", "2", "3"]
         vm_size         = "Standard_B2s"
