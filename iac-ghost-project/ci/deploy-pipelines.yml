@@ -17,7 +17,7 @@ steps:
     script: |
       mkdir $(System.DefaultWorkingDirectory)\iac-ghost-project\.terraform
       
-      xcopy /E /D E:\Softwares\iac-ghost-project\.terraform  $(System.DefaultWorkingDirectory)\iac-ghost-project\.terraform
+      xcopy /E /D E:\Softwares\terraform_1.1.4_windows_386\ghost-nordcloud\iac-ghost-project\.terraform  $(System.DefaultWorkingDirectory)\iac-ghost-project\.terraform
 
 - task: CmdLine@2
   displayName: Terraform Plan

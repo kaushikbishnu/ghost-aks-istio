@@ -12,23 +12,78 @@
 
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+		<style>
+			.reveal section p {
+			display: inline-block;
+			font-size: 0.6em;
+			line-height: 1.2em;
+			vertical-align: top;
+			text-align: left;
+		  }
+		</style>
 	</head>
 	<body>
 		<div class="reveal">
-			<div class="slides">				
-				<section data-markdown>
-					<textarea data-template>
-					    ## Terraform Cloud
-					    ### What is Terraform Cloud?
-						Terraform Cloud is HashiCorp’s managed service offering. It eliminates the need for unnecessary tooling and documentation for practitioners, teams, and organizations to use Terraform in production.
-						Provision infrastructure in a remote environment that is optimized for the Terraform workflow.
-					    
-					  </textarea>
-				</section>
-				<section>Azure Devops</section>
-				<section>Github</section>
+			<div class="slides">		
 				<section>
-					<section>High Level Architecture</section>
+					<section>
+						<image src="https://cloud.hashicorp.com/_next/image?url=https%3A%2F%2Fwww.datocms-assets.com%2F58478%2F1638204434-logo-terraform-cloud.svg&w=256&q=75"/>
+					</section>
+					<section>What is Terraform Cloud?</section>
+					<section>
+						<p>Terraform Cloud is HashiCorp’s managed service offering. It eliminates the need for unnecessary 
+							tooling and documentation for practitioners, teams, and organizations to use Terraform in production.</p>						
+						<p>Provision infrastructure in a remote environment that is optimized for the Terraform workflow.</p>		
+						<p><a href="https://learn.hashicorp.com/collections/terraform/cloud-get-started">how to use</a></p>				
+					</section>	
+					<section><p><a href="https://app.terraform.io/app/for_nordcloud/workspaces/ghost_project">Link to Ghost Project</a></p>	</section>
+				</section>
+				<section>
+					<section>
+						<div>Azure Devops Pipelines</div>
+						<div><image src="https://azurecomcdn.azureedge.net/cvt-2903ee2ea52df7b351f35f2ec877c23558c5ec87eaf9c5266294b55c0657e930/images/shared/services/devops/pipelines-icon-80.png"/></div>
+						<p><a href="https://dev.azure.com/bpriyanjali94/Nordcloud_Assesment/_build">Link to Ghost Project</a></p>
+					</section>
+					<section>
+						<image src="pics/ado-pipeline.PNG"/>
+					</section>
+				</section>	
+				<section>
+					<section>
+						<div>github</div>
+						<div><image src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" width="100" height="100"/></div>
+						<p><a href="https://github.com/kaushikbishnu/ghost-nordcloud" >Link to Ghost Project</a></p>
+					</section>
+				</section>
+				<section>
+					<section>High Level Design for CI/CD</section>					
+					<section>
+						<div>Continuous Integration for POC</div>
+						<div>
+							<image width="500" src="pics/devops-pipeline-current-architecture.jpg"/>
+						</div>				
+					</section>
+					<section>
+						<div>Target Architecture CI/CD</div>
+						<div>
+							<image width="500" src="pics/devops-target-architecture.png"/>
+						</div>				
+					</section>					
+				</section>
+				<section>
+					<section>Ghost Architecture</section>
+					<section>
+						<div>Target Architecture</div>
+						<div>
+							<image width="650" src="pics/ghost-assesment-architecture.JPG"/>
+						</div>				
+					</section>	
+					<section>
+						<div>Current Architecture</div>
+						<div>
+							<image width="650" src="pics/current-ghost-architecture.JPG"/>
+						</div>				
+					</section>					
 				</section>
 			</div>
 		</div>
