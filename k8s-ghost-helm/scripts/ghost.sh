@@ -1,10 +1,11 @@
 echo "---------INSTALLING GHOST---------"
 
-helm upgrade --install ghost-nordcloud ../ghost-nordcloud/ #-n istio-ingress
 
 export INGRESS_HOST=$(kubectl -n istio-system get service istio-ingressgateway -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
 export INGRESS_DOMAIN=${INGRESS_HOST}
 echo ${INGRESS_DOMAIN}
+
+helm upgrade --install ghost-nordcloud ../ghost-nordcloud/ --set service.url=http://${INGRESS_HOST}  #-n istio-ingress
 
 cat <<EOF | kubectl apply -f -
 apiVersion: networking.istio.io/v1alpha3

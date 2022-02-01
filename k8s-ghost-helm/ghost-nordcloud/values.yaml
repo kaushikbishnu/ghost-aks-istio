@@ -39,7 +39,7 @@ securityContext: {}
 service:
   type: ClusterIP
   port: 80
-  url: http://my-blog.com
+  url: http://20.124.41.211
 
 ingress:
   enabled: false
