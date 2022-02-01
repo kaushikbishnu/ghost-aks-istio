@@ -4,15 +4,15 @@ Click this link for presentation https://kaushikbishnu.github.io/ghost-nordcloud
 
 # Ghost Blog
 
-Click this link for the deployed blog http://20.120.58.112/
+Click this link for the deployed blog http://52.191.20.135/
 
 # Kiali
 
-Click this link for the deployed blog http://20.120.58.112/kiali
+Click this link for the deployed blog http://52.191.20.135/kiali
 
 # Prometheus
 
-Click this link for the deployed blog http://20.120.58.112/prometheus
+Click this link for the deployed blog http://52.191.20.135/prometheus
 
 # Development Instructions
 
