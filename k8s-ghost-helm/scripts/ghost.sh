@@ -7,6 +7,8 @@ echo ${INGRESS_DOMAIN}
 
 helm upgrade --install ghost-nordcloud ../ghost-nordcloud/ --set service.url=http://${INGRESS_HOST}  #-n istio-ingress
 
+### I have to do this because I do not createa DNS alias
+
 cat <<EOF | kubectl apply -f -
 apiVersion: networking.istio.io/v1alpha3
 kind: Gateway
