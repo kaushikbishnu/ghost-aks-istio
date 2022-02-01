@@ -2,13 +2,13 @@
 
 > Please check the presentaion link below for Target Architectures
 
-![](docs\pics\devops-pipeline-current-architecture.jpg)
+![](docs/pics/devops-pipeline-current-architecture.jpg)
 
 # POC Architecture
 
 > Please check the presentaion link below for Target Architectures
 
-![](docs\pics\current-ghost-architecture.JPG)
+![](docs/pics/current-ghost-architecture.JPG)
 
 # Presentation
 
