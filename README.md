@@ -54,3 +54,20 @@ Plan is to trigger this pipeline from
 
 https://github.com/kaushikbishnu/nordcloud_assesment
 
+# Before you see the code
+
+    IMPORTAT NOTES (taking leverage of this being a POC)
+    
+    - I have not considered TLS security for this application 
+      becaue of lack of time, although I have implemented ISTIO 
+      to have the provision for the security to be implemented 
+      as a side car
+
+    - I have not done any CMK encryption in any of the Azure Services
+    - There are passwords added as plain text in the git, I did not really like doing it but I did not wanted to spend time on implementing csi secret store provider as a part of this POC
+
+      
+
+
+
+
