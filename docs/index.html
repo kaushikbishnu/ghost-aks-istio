@@ -60,7 +60,27 @@
 					</section>
 				</section>
 				<section>
-					<section>High Level Design for CI/CD</section>					
+					<section>
+						<div>Azure Kubernetes Service</div>
+						<div><image width="300" src="https://miro.medium.com/max/1200/1*ub46bEO8G5Bq-GW6mRQSBg.png"/></div>
+					</section>					
+				</section>
+				<section>
+					<section>
+						<div>Azure Mysql</div>
+						<div><image src="https://jenstirrup.files.wordpress.com/2019/02/azuremysqllogo.png?w=825"/></div>
+					</section>	
+					<section>
+						<image src="https://techcommunity.microsoft.com/t5/image/serverpage/image-id/220099iAC3292BA6006F4BA/image-size/large?v=v2&px=999"/>
+					</section>
+					<section>
+						<div>
+							<image src="https://docs.microsoft.com/pl-pl/azure/mysql/flexible-server/media/concepts-high-availability/1-flexible-server-overview-zone-redundant-ha.png"/>
+						</div>
+						<div><a href="https://docs.microsoft.com/en-us/azure/mysql/flexible-server/overview">Microsoft Documentation</a></div>
+					</section>				
+				</section>
+				<section>								
 					<section>
 						<div>Continuous Integration for POC</div>
 						<div>
@@ -75,19 +95,56 @@
 					</section>					
 				</section>
 				<section>
-					<section>Ghost Architecture</section>
 					<section>
-						<div>Target Architecture</div>
+						<div>Target Application Architecture</div>
 						<div>
-							<image width="650" src="pics/ghost-assesment-architecture.JPG"/>
+							<image width="700" src="pics/ghost-assesment-architecture.JPG"/>
 						</div>				
 					</section>	
 					<section>
 						<div>Current Architecture</div>
 						<div>
-							<image width="650" src="pics/current-ghost-architecture.JPG"/>
+							<image width="700" src="pics/current-ghost-architecture.JPG"/>
 						</div>				
 					</section>					
+				</section>
+				<section>High Availibility</section>
+				<section>
+					<section>
+						<div>High Availibility on Mysql</div>
+						<p>
+							Azure Mysql Flexible Server will provide High Availibility out of the box.
+							According to Microsoft Documenation there are 2 types of HA
+						</p>						
+					</section>
+					<section>
+						<div>Zone-redundant HA architecture</div>
+						<div><image width="700" src="https://docs.microsoft.com/en-us/azure/mysql/flexible-server/media/concepts-high-availability/1-flexible-server-overview-zone-redundant-ha.png"/></div>
+					</section>
+					<section>
+						<div>Same-zone HA architecture</div>
+						<div><image width="700" src="https://docs.microsoft.com/en-us/azure/mysql/flexible-server/media/concepts-high-availability/flexible-server-overview-same-zone-ha.png"/></div>
+					</section>
+				</section>
+				<section>
+					<section>
+						<div>High Availibility on AKS</div>
+						<p>
+							Kubernetes itself is known for High Availibility and resiliency. 							
+							There is Detailed Decumentation on MS Website. The Image below is taken from MS documentaion
+							<div><image width="400" src="https://docs.microsoft.com/pl-pl/azure/aks/media/autoscaler/cluster-autoscaler.png"/></div>
+						</p>
+					</section>	
+					<section>
+						<div>Zone Redundant Nodepool</div>
+						<p>On production setup, the Nodepools will be zone redundant.
+							So that each replica of the pod will be created on a new Availibility Zone
+						</p>
+						<div>Geo Redundant Nodepool</div>
+						<p>As 2nd level of Fault Tolerance, we can make another Nodepool in another Geo Location.</p>
+						<div>Geo Redundant AKS Cluster</div>
+						<p>As 2nd level of Fault Tolerance, we can make a replica of the whole cluster in another geo location and use it on demand.</p>
+					</section>		
 				</section>
 				<section>DEMO</section>
 				<section>
