@@ -1,15 +1,3 @@
-# POC Continuous Integration
-
-> Please check the presentaion link below for Target Architectures
-
-![](docs/pics/devops-pipeline-current-architecture.jpg)
-
-# POC Architecture
-
-> Please check the presentaion link below for Target Architectures
-
-![](docs/pics/current-ghost-architecture.JPG)
-
 # Presentation
 
 Click this link for presentation https://kaushikbishnu.github.io/ghost-nordcloud/
@@ -18,13 +6,25 @@ Click this link for presentation https://kaushikbishnu.github.io/ghost-nordcloud
 
 Click this link for the deployed blog http://52.191.20.135/
 
+# POC Continuous Integration
+
+> Please check the presentaion link for Target Architectures
+
+![](docs/pics/devops-pipeline-current-architecture.jpg)
+
+# POC Architecture
+
+> Please check the presentaion link for Target Architectures
+
+![](docs/pics/current-ghost-architecture.JPG)
+
 # Kiali
 
 Click this link for the deployed blog http://52.191.20.135/kiali
 
-# Prometheus
+# Grafana
 
-Click this link for the deployed blog http://52.191.20.135/prometheus
+Click this link for the deployed blog http://52.191.20.135:15021/
 
 # Development Instructions
 
