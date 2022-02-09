@@ -4,7 +4,7 @@ Click this link for presentation https://kaushikbishnu.github.io/ghost-nordcloud
 
 # Ghost Blog
 
-Click this link for the deployed blog http://52.191.20.135/
+Click this link for the deployed blog http://20.83.140.109/
 
 # POC Continuous Integration
 
@@ -20,11 +20,11 @@ Click this link for the deployed blog http://52.191.20.135/
 
 # Kiali
 
-Click this link for the deployed blog http://52.191.20.135/kiali
+Click this link for the deployed blog http://20.83.140.109/kiali
 
 # Grafana
 
-Click this link for the deployed blog http://52.191.20.135:15021/
+Click this link for the deployed blog http://20.83.140.109:15021/
 
 # Development Instructions
 

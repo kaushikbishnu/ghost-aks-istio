@@ -39,6 +39,11 @@ spec:
 
         - name: database__connection__password
           value: {{ .Values.database.connection.password | quote }}
+          # valueFrom:
+          #   secretKeyRef:
+          #     name: mysql-secret
+          #     key: db-password
+          
 
         - name: database__connection__database
           value: {{ .Values.database.connection.database }}
@@ -56,12 +61,17 @@ spec:
           value: "/etc/ssl-cert"
 
       #   volumeMounts:
-      #   - mountPath: /var/lib/ghost/content
-      #     name: content
+      #   - name: secrets-store01-inline
+      #     mountPath: "/mnt/secrets-store"
+      #     readOnly: true
+        
       # volumes:
-      # - name: content
-      #   persistentVolumeClaim:
-      #     claimName: blog-content
+      #   - name: secrets-store01-inline
+      #     csi:
+      #       driver: secrets-store.csi.k8s.io
+      #       readOnly: true
+      #       volumeAttributes:
+      #         secretProviderClass: "azure-sync"
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}

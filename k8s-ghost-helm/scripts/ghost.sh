@@ -4,7 +4,7 @@ echo "---------INSTALLING GHOST---------"
 export INGRESS_HOST=$(kubectl -n istio-system get service istio-ingressgateway -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
 export INGRESS_DOMAIN=${INGRESS_HOST}
 echo ${INGRESS_DOMAIN}
-
+# az aks enable-addons --addons azure-keyvault-secrets-provider --name ghost-k8s-cluster --resource-group rg-nordcloud-ghost
 helm upgrade --install ghost-nordcloud ../ghost-nordcloud/ --set service.url=http://${INGRESS_HOST}  #-n istio-ingress
 
 ### I have to do this because I do not createa DNS alias
