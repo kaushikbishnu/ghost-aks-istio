@@ -57,8 +57,8 @@ spec:
         - name: database__connection__ssl__rejectUnauthorized
           value: {{ .Values.database.connection.ssl.rejectUnauthorized | quote }}
 
-        - name: NODE_EXTRA_CA_CERTS
-          value: "/etc/ssl-cert"
+        # - name: NODE_EXTRA_CA_CERTS
+        #   value: "/etc/ssl-cert"
 
       #   volumeMounts:
       #   - name: secrets-store01-inline

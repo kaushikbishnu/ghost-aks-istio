@@ -1,8 +1,8 @@
 echo "---------INSTALLING KIALI---------"
 helm install --namespace istio-system --set auth.strategy="anonymous" --repo https://kiali.org/helm-charts kiali-server kiali-server
 
-export INGRESS_HOST=$(kubectl -n istio-system get service istio-ingressgateway -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
-export INGRESS_DOMAIN=${INGRESS_HOST}
+export INGRESS_DOMAIN=$(az network public-ip list --query "[?contains(name, 'kubernetes')].[dnsSettings.fqdn]" --output tsv
+)
 echo ${INGRESS_DOMAIN}
 
 cat <<EOF | kubectl apply -f -

@@ -1,8 +1,8 @@
 echo "---------INSTALLING prometheus---------"
 kubectl apply -f https://raw.githubusercontent.com/istio/istio/release-1.12/samples/addons/prometheus.yaml
 
-export INGRESS_HOST=$(kubectl -n istio-system get service istio-ingressgateway -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
-export INGRESS_DOMAIN=${INGRESS_HOST}
+export INGRESS_DOMAIN=$(az network public-ip list --query "[?contains(name, 'kubernetes')].[dnsSettings.fqdn]" --output tsv
+)
 echo ${INGRESS_DOMAIN}
 
 cat <<EOF | kubectl apply -f -
