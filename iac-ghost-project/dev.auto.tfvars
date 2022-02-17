@@ -1,3 +1,4 @@
+app_name="nordcloud-test"
 subscription_id="1bd78ea7-13c0-4d71-bc70-b6a822ea4a46"
 client_id="93031176-d2d8-4035-b9ef-00b5a4febee6"
 client_secret="U.4p51.gLtiR10Yemwzd5weld9-Z6X5Blk"

@@ -1,5 +1,5 @@
 variable "app_name" {
-  default = "nordcloud_assesment"
+  default = "ghost"
   description   = "Location of the resource group."
 }
 
